@@ -30,21 +30,21 @@ tw-link:hover{
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Intro" tags="" position="625,275" size="100,100">&#39;&#39;The Quest for a Cure
 &#39;&#39;By: Charity Tillman
 
-[[Start]]</tw-passagedata><tw-passagedata pid="2" name="Start" tags="" position="775,275" size="100,100">The village awakens, early as usual, as you start your walk to your Family&#39;s Bakery. The moon continues to hang in the morning sky. You feel the excitement radiate around you, as today is the first day of the Centennial Celebration for the Kingdom of Grimtide. 
+[[Start]]</tw-passagedata><tw-passagedata pid="2" name="Start" tags="" position="775,275" size="100,100">The village awakens, early as usual, as you start your walk to your Family&#39;s Bakery. The moon continues to hang in the morning sky. You feel the excitement radiate around you, the Centennial Celebration for the Kingdom of Lavella is only a week away, people from all over will be going to the main City of Grimtide to celebrate. 
 The bakery is getting closer with each step.
 
-[[open bakery door]]</tw-passagedata><tw-passagedata pid="3" name="open bakery door" tags="" position="925,275" size="100,100">The sign above the bakery door reads &quot;Bria&#39;s Bread&quot;, named after your mom. You open the bakery door, step in, and close it behind you. The aroma of fresh breads and pasteries fills the air, and the warmth of childhood memories wells up inside you. 
+[[open bakery door]]</tw-passagedata><tw-passagedata pid="3" name="open bakery door" tags="" position="925,275" size="100,100">The sign above the bakery door reads &quot;Bria&#39;s Bread&quot;, named after your mom. You open the bakery door, step in, and close it behind you. The aroma of fresh breads and pastries fills the air, and the warmth of childhood memories wells up inside you. 
 
 Your mom is smiling behind the counter, happy to see you. 
 
-[[&quot;Good morning mom, do you think we&#39;ll be able to go to the festival in Grimtide today?&quot;]]
+[[&quot;Good morning mom, do you think we&#39;ll be able to go to the festival in Grimtide next week?&quot;-&gt;ask about grimtide fest]]
 
-[[&quot;Good morning mom, how can I help out today?&quot;]]</tw-passagedata><tw-passagedata pid="4" name="&quot;Good morning mom, do you think we&#39;ll be able to go to the festival in Grimtide today?&quot;" tags="" position="1050,325" size="100,100">&quot;Good morning Saylor. I think the store will be too busy, many travelers are gonna stop by our small rural village for food and supplies before making it to Grimtide. I&#39;m sorry sweety.
+[[&quot;Good morning mom, how can I help out today?&quot;]]</tw-passagedata><tw-passagedata pid="4" name="ask about grimtide fest" tags="" position="1050,325" size="100,100">&quot;Good morning Saylor. I think the store will be too busy, many travelers are gonna stop by our small rural village for food and supplies before making it to Grimtide. I&#39;m sorry sweety.
 
 In fact I think we need more supplies for bread, do you think you can pick up some ingredients for me?&quot; 
 
 You try to keep a smiling face, to hide your dissapointment
-[[&quot;Sure thing&quot;-&gt;ingredients]]</tw-passagedata><tw-passagedata pid="5" name="&quot;Good morning mom, how can I help out today?&quot;" tags="" position="1050,175" size="100,100">&quot;Good morning Saylor. We&#39;re in luck cause I think the store is gonna be busy today, many travelers are gonna stop by our small rural village for food and supplies before making it to Grimtide.
+[[&quot;Sure thing&quot;-&gt;ingredients]]</tw-passagedata><tw-passagedata pid="5" name="&quot;Good morning mom, how can I help out today?&quot;" tags="" position="1050,175" size="100,100">&quot;Good morning Saylor. We&#39;re in luck cause I think the store is gonna be busy this week, many travelers are gonna stop by our small rural village for food and supplies before making it to Grimtide.
 
 In fact I think we need more supplies for bread, do you think you can pick up some ingredients for me?&quot; 
 
@@ -63,10 +63,10 @@ List:
 
 The thought of being able to step out of the village for rosemary is enticing, maybe there&#39;s a chance to see more of the festival. 
 ]
-[[head to The Mill-&gt;head to the mill]]
-[[head to Aunt Agnes&#39;]]
+(if:$butter is false)[[[head to The Mill-&gt;head to the mill]]]
+(if:$sugar is false)[ [[head to Aunt Agnes&#39;]]]
 (if:visits &gt;= 2)[ [[head to The Meadow Patch]] ]
-</tw-passagedata><tw-passagedata pid="9" name="head to the mill" tags="" position="1475,125" size="100,100">The path to the mill starts out clear and wide, but slowly twindles to a small pebbeled path since the mill is in the outskirts of the town. 
+</tw-passagedata><tw-passagedata pid="9" name="head to the mill" tags="" position="1475,125" size="100,100">The path to the mill starts out clear and wide, but slowly dwindles to a small pebbeled path since the mill is in the outskirts of the town. 
 
 Thomas is in the distance feeding some cows.
 
@@ -76,14 +76,14 @@ Thomas is in the distance feeding some cows.
 ]
 (after:13s)[&quot;Yessir&quot; 
 ]
-(if:(history: where its name contains &quot;head to Aunt Agnes&#39;&quot;)&#39;s length is 0)[(after:15s)[&quot;You know what would really sell the bread? addin&#39; some good old Rosemary. You should get some from The Patch if you get a chance.&quot; ]
+(if:(history: where its name contains &quot;head to Aunt Agnes&#39;&quot;)&#39;s length is 0)[(after:15s)[&quot;You know what would really sell the bread? Addin&#39; some good old Rosemary. You should get some from The Patch if you get a chance.&quot; ]
 
 (after:19s)[[[take the butter-&gt;put list away]](set: $butter to true)(set: $rosemary to false)]](if:(history: where its name contains &quot;head to Aunt Agnes&#39;&quot;)&#39;s length &gt;= 1)[(after:15s)[[[take the butter-&gt;put list away]](set: $butter to true)]]
 
 
-</tw-passagedata><tw-passagedata pid="10" name="head to Aunt Agnes&#39;" tags="" position="1475,375" size="100,100">Aunt Agnes&#39; is only a short walk away, and right in the middle of town. The walk is lively, and you wave to the many people of town that you know. 
+</tw-passagedata><tw-passagedata pid="10" name="head to Aunt Agnes&#39;" tags="" position="1475,375" size="100,100">Aunt Agnes&#39;s is only a short walk away and right in the middle of town. The walk is lively, and you wave to the many people of town that you know. 
 
-You walk up to Aunt Agnes&#39; door.
+You walk up to Aunt Agnes&#39;s door.
 *knock**knock*
 
 (after:6s)[The door opens, and a smiling face greets you. Before you can even speak, Aunt Agnes has you embraced in a warm hug. ]
@@ -105,7 +105,7 @@ You walk up to Aunt Agnes&#39; door.
 (after:15s)[Theres a small pocket of rosemary, but plenty for baking. 
 ]
 (after:18s)[Observing the rosemary, suddenly a red overcast light illuminates the patch. 
-](after:20s)[Your head quickly turns towards the sky...the moon has turned into a blood moon. 
+](after:20s)[Your head quickly turns towards the sky...the moon has turned blood red. 
 An ominous feeling washes over you, as this wasn&#39;t on the lunar calendar.]
 
 (after:25s)[ [[continue picking rosemary]]
@@ -168,25 +168,25 @@ until...the bodies. Everyone in sight is laying almost lifeless on the ground, i
 (set: $map to false)
 (set: $villagerSaved to false)
 (set: $knowPotion to false)
-(set: $villagerSaved to false)</tw-passagedata><tw-passagedata pid="20" name="examine sign" tags="" position="2200,600" size="100,100">(if:visits is 1)[To the east is the Meadow Patch
+(set: $villagerSaved to false)</tw-passagedata><tw-passagedata pid="20" name="examine sign" tags="" position="2200,600" size="100,100">(if:(history: where its name contains &quot;Meadow Patch&quot;)&#39;s length is 0 and (history: where its name contains &quot;Hymm&#39;s Inn&quot;)&#39;s length is 0)[To the east is the Meadow Patch
 
-to the west is the Hymm&#39;s Inn in the small City of Oakhaven
+to the west is the Siren&#39;s Hymm Inn in the small City of Oakhaven
 
 continuing North is the City of Grimtide
 
 and in every other direction, Elderflower Forest. 
 
 
-(after:5s)[There&#39;s a trail of some kind of sparkling substance in the direction of Hymm&#39;s Inn]
+(after:5s)[There&#39;s a trail of some kind of sparkling substance in the direction of Siren&#39;s Hymm Inn]
 (after:7s)[but suddenly you hear a scream coming from the meadow.]
 
 (after:9s)[ [[Meadow Patch]]
-[[Hymm&#39;s Inn]]
+[[Siren&#39;s Hymm Inn-&gt;Hymm&#39;s Inn]]
 [[City of Grimtide]]
 [[Elderflower Forest]]]
-] (if:visits &gt;= 2)[To the east is the [[Meadow Patch]]
+] (else:)[To the east is the [[Meadow Patch]]
 
-to the west is the [[Hymm&#39;s Inn]] in the small City of Oakhaven
+to the west is the [[Siren&#39;s Hymm Inn-&gt;Hymm&#39;s Inn]] in the small City of Oakhaven
 
 continuing North is the [[City of Grimtide]]
 
@@ -197,17 +197,15 @@ and in every other direction, [[Elderflower Forest]].]
 [[examine the tablet]]] (if:(history: where its name contains &quot;Meadow Patch&quot;)&#39;s length &gt;= 1 or visits &gt;= 2)[The Hymm&#39;s Inn stands tall and lively. Music and chattering are coming from inside. 
 [[go inside]] 
 [[go back-&gt;examine sign]]]
-(if:(history: where its name contains &quot;Hymm&#39;s Inn&quot;)&#39;s length &gt; 2)[(set: $time to it + 1)]</tw-passagedata><tw-passagedata pid="22" name="City of Grimtide" tags="" position="2575,1050" size="100,100">The trail to the city is a lively one, full of visitors going to The Centennail Celebration. The city walls tower in the sky, and guards stand dutifully before the entrance gate. When your turn comes, they ask for your pass.
+(if:(history: where its name contains &quot;Hymm&#39;s Inn&quot;)&#39;s length &gt; 2)[(set: $time to it + 1)]</tw-passagedata><tw-passagedata pid="22" name="City of Grimtide" tags="" position="2525,1050" size="100,100">The trail to the city is a lively one, full of visitors going to The Centennail Celebration. You see the city walls in the distance, they seem to be extremely far away. Your not sure if the city doesn&#39;t have much to offer besides a good time.
 
-[[head back-&gt;examine sign]]
-[[sneak in with the group in front of you]]
-
-(set: $time to it + 1)</tw-passagedata><tw-passagedata pid="23" name="Elderflower Forest" tags="" position="2475,1375" size="100,100">(if:$knowWitch is false)[just bushes and trees here(if:visits &gt;= 2)[(set: $time to it + 1)]](if:$knowWitch is true)[(if:$map is true)[Looking at the map, an illustration marking The Witch of the Elderflower Forest&#39;s abode has magically appeared. 
+[[continue]]
+[[head back-&gt;examine sign]]</tw-passagedata><tw-passagedata pid="23" name="Elderflower Forest" tags="" position="2475,1375" size="100,100">(if:$knowWitch is false)[just bushes and trees here(if:visits &gt;= 2)[(set: $time to it + 1)]](if:$knowWitch is true)[(if:$map is true)[Looking at the map, an illustration marking The Witch of the Elderflower Forest&#39;s abode has magically appeared. 
 [[go to The Witch]]](if:$map is false)[With no direction to go off of, your sense of intuition acts as your compass 
 [[search for The Witch-&gt;go to The Witch]](set: $time to it + 1)]
 ]
 
-[[go back-&gt;examine sign]] </tw-passagedata><tw-passagedata pid="24" name="Meadow Patch" tags="" position="2425,175" size="100,100">(if:(history: where its name contains &quot;Hymm&#39;s Inn&quot;)&#39;s length is 0)[Getting closer to the sound of the scream, in the meadow patch there&#39;s a Wizard and a scared looking boy. Upon closer look the boy seems to be trapped in some sort of magical barrier. 
+[[go back-&gt;examine sign]] </tw-passagedata><tw-passagedata pid="24" name="Meadow Patch" tags="" position="2425,175" size="100,100">(if:(history: where its name contains &quot;Hymm&#39;s Inn&quot;)&#39;s length is 0 and visits is 1)[Getting closer to the sound of the scream, in the meadow patch there&#39;s a Wizard and a scared looking boy. Upon closer look the boy seems to be trapped in some sort of magical barrier. 
 
 (after:5s)[The Wizard turns to face you &quot;who goes there?&quot; he asks. ]
 
@@ -223,10 +221,8 @@ and in every other direction, [[Elderflower Forest]].]
 [[b. The Eclipse-&gt;wrong]]
 [[c. The Blood Moon]]
 [[d. The Centennial Celebration-&gt;wrong]]]
-] (if:(history: where its name contains &quot;Hymm&#39;s Inn&quot;)&#39;s length &gt;= 1)[The open space of grass, surrounded by trees of The ElderFlower Forest, flows with the wind. 
-(if:(history: where its name contains &quot;go to Rosemary patch&quot;)&#39;s length &gt;= 1)[You look at the spot of Rosemary from before.
-
-[[go to Rosemary patch]]]
+] (else:)[The open space of grass, surrounded by trees of The ElderFlower Forest, flows with the wind. You look at the spot of Rosemary from before.
+[[go to Rosemary patch]]
 [[go back-&gt;examine sign]]]
 (if:(history: where its name contains &quot;Meadow Patch&quot;)&#39;s length &gt;= 2)[(set: $time to it + 1)]</tw-passagedata><tw-passagedata pid="25" name="c. The Blood Moon" tags="" position="2625,175" size="100,100">A breeze suddenly pushes through the meadow, lifting up fallen leaves and wrapping around the trapped boy. Then a puff of smoke and the barrier is gone, the boy is freed. The boy runs to you and hides behind you.
 
@@ -306,7 +302,7 @@ The lone customers, though, don&#39;t seem lonely, but instead have an air of se
 
 (after:3s)[&quot;What&#39;ll ya have darling?&quot;]
 (after:5s)[&quot;Y&#39;all got cider?&quot;]
-(after:7s)[&quot;sure do, that&#39;ll be 5 shillings&quot;]
+(after:7s)[&quot;sure do, that&#39;ll be 2 bronze&quot;]
 
 (after:9s)[ [[reach in your bag to pay]]]</tw-passagedata><tw-passagedata pid="37" name="talk to the Githyanki" tags="" position="2750,625" size="100,100">Approaching the Githyanki, they don&#39;t acknowledge your presence. Your attempts to strike up conversation lead no where.
 
@@ -379,7 +375,7 @@ I&#39;ve heard of these things only happenin&#39; in times of great darkness. I 
 (if:(history: where its name contains &quot;talk to the Githyanki&quot;)&#39;s length is 0) [ [[talk to the Githyanki]]]
 [[say your goodbyes and head back-&gt;examine sign]]
 (set: $knowWitch to true)
-(set: $time to it - 1)</tw-passagedata><tw-passagedata pid="50" name="go to The Witch" tags="" position="2600,1375" size="100,100">Your body is anxsty with adrenaline as time continues to run out for your village. The Witch of the Elderflower Forest must be nearby. 
+(set: $time to it - 1)</tw-passagedata><tw-passagedata pid="50" name="go to The Witch" tags="" position="2600,1375" size="100,100">Your body is overflowing with adrenaline as time continues to run out for your village. The Witch of the Elderflower Forest must be nearby. 
 
 A shuffling sound comes from behind you.
 [[turn to face the sound-&gt;you turn to face the sound]]</tw-passagedata><tw-passagedata pid="51" name="you turn to face the sound" tags="" position="2725,1375" size="100,100">&quot;mwah-ha-ha-ha, a youthful beauty has come to find ME?! How lucky I am&quot; 
@@ -428,7 +424,7 @@ You spot the potion that your friend needs.
 
 [[Attempt to trick the witch, &quot;If I can unravel the secrets of one of these potions myself, can you teach me without such a heavy fee?&quot;-&gt;trick]]
 
-[[Accept the deal, &quot;It seems your powers are legit, I&#39;ll take on your deal&quot;-&gt;deal]]
+[[Accept the deal, &quot;It seems your powers are legitimate, I&#39;ll take on your deal&quot;-&gt;deal]]
 
 [[deny the deal and start a new life-&gt;new life]]</tw-passagedata><tw-passagedata pid="57" name="deal" tags="" position="3325,1100" size="100,100">&quot;mwa-ha-ha, lucky me&quot; says the witch &quot;It seems that the potion Vital Lunar Elixir is what you need.&quot;
 
@@ -442,7 +438,7 @@ Your vision grows dark, you fall over.
 
 It seems the blood moon has gotten you too. 
 
-[[restart-&gt;Intro]]</tw-passagedata><tw-passagedata pid="59" name="trick" tags="" position="3325,1375" size="100,100">&quot;That is not an easy task, but I shall allow it, if you come back a failure, it will cost you your life...go on, choose a potion to unravel and come back in 5 days.&quot;
+(link:&quot;Restart&quot;)[(restart:)]</tw-passagedata><tw-passagedata pid="59" name="trick" tags="" position="3325,1375" size="100,100">&quot;That is not an easy task, but I shall allow it, if you come back a failure, it will cost you your life...go on, choose a potion to unravel and come back in 5 days.&quot;
 
 Browsing the shelves, you see the Vital Lunar Elixir.
 
@@ -452,14 +448,17 @@ Browsing the shelves, you see the Vital Lunar Elixir.
 
 &quot;I&#39;m sorry mom&quot; you say. ]
 
-(after:14s)[You reach for your last embrace, and hold your family close. The warmth of their love surrounds you as your consciousness slowly dissipates.]]](else:)[(after:4s)[You wait. Nothing happens. You giver her more of the potion, but again nothing. It seems you were too late.](if:(history: where its name contains &quot;deal&quot;)&#39;s length &gt;= 1)[(after:8s)[Tears start to stream down your face. 
+(after:14s)[You reach for your last embrace, and hold your family close. The warmth of their love surrounds you as your consciousness slowly dissipates.](else:)[(after:6s)[Your heart warms up as you see the village being brought back to life. You reach for a warm embrace with your family. You proved to be a hero to your village.](after:15s)[(link:&quot;Restart&quot;)[(restart:)]]](after:15s)[(link:&quot;Restart&quot;)[(restart:)]]]](else:)[(after:4s)[You wait. Nothing happens. You giver her more of the potion, but again nothing. It seems you were too late.](if:(history: where its name contains &quot;deal&quot;)&#39;s length &gt;= 1)[(after:8s)[Tears start to stream down your face. 
 
 &quot;I&#39;m sorry mom&quot; you say. ]
 
-(after:12s)[You lay down next to her and reach for a one-sided hug as your consciousness slowly dissipates.]]]
-
-(after:15s)[[[restart-&gt;Intro]]]</tw-passagedata><tw-passagedata pid="61" name="sneak in with the group in front of you" tags="" position="2700,1050" size="100,100">Inside it&#39;s the most lively event you&#39;ve ever seen. Street food, dancing, music, beer, crowds, your heart comes alive at the sight. After some dancing, you decide to 
+(after:12s)[You lay down next to her and reach for a one-sided hug as your consciousness slowly dissipates.](after:15s)[(link:&quot;Restart&quot;)[(restart:)]]](after:6s)[(link:&quot;Restart&quot;)[(restart:)]]]</tw-passagedata><tw-passagedata pid="61" name="sneak in with the group in front of you" tags="" position="2775,1050" size="100,100">Inside the gates, it&#39;s lively and full of people. Street food, music, beer, crowds, your heart comes alive at the sight. After some dancing, you decide to 
 [[head back-&gt;examine sign]]
+
+(set: $time to it + 1)</tw-passagedata><tw-passagedata pid="62" name="continue" tags="" position="2650,1050" size="100,100">The city walls tower in the sky and guards stand dutifully before the entrance gate. When your turn comes, they ask for your pass.
+
+[[head back-&gt;examine sign]]
+[[sneak in with the group in front of you]]
 
 (set: $time to it + 1)</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
